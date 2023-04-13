@@ -5,9 +5,14 @@
 
 
 @section('content')
-    @foreach ($posts as $post)
-        <h1><a href="#"> {{ $post }}</a> </h1>
-    @endforeach
 
-    <article>Liste des articles</article>
+    @if ($posts->count()>0)
+        @foreach ($posts as $post)
+            <h1><a href="{{route('posts.show', ['id'=>$post->id])}} "> {{ $post->title }}</a> </h1>
+        @endforeach
+        @else
+        <span>Aucun Post en base de données</span>
+    @endif
+
+
 @endsection
