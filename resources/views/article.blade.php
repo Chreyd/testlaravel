@@ -8,7 +8,19 @@
     <div class="container">
         <strong>Description</strong>
         <div>
-            {{$post->content}}
+            {{ $post->content }}
+        </div>
+        <hr>
+        <div>
+            <ul>
+                @forelse ($post->comments as $comment)
+                    <li>{{ $comment->content }} || créé le {{$comment->created_at->toDateTimeString()}} </li>
+
+                @empty
+                    <li>Récupération de données impossible</li>
+                @endforelse
+
+            </ul>
         </div>
     </div>
 @endsection
