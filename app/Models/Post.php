@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Image;
 use App\Models\Comment;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -10,7 +11,7 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $fillable= [
+    protected $fillable = [
         'title',
         'content'
     ];
@@ -19,5 +20,8 @@ class Post extends Model
     {
         return $this->hasMany(Comment::class);
     }
-
+    public function image()
+    {
+        return $this->hasOne(Image::class);
+    }
 }

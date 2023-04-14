@@ -11,6 +11,8 @@
             {{ $post->content }}
         </div>
         <hr>
+        <p>{{$post->image ? $post->image->path: "Pas d'image associé à ce poste"}} </p>
+        <hr>
         <div>
             <ul>
                 @forelse ($post->comments as $comment)
