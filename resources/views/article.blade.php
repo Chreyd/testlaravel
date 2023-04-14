@@ -32,5 +32,13 @@
                 <p>Aucun tag pour ce poste</p>
             @endforelse
         </div>
+        <hr>
+        <hr>
+        @if ($post->imageArtist)
+        <p>Artist: {{$post->imageArtist->name}} </p>
+
+        @else
+        <p>pas d'artist</p>
+        @endif
     </div>
 @endsection
