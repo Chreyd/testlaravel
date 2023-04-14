@@ -13,6 +13,16 @@
         @else
         <span>Aucun Post en base de données</span>
     @endif
+    <br>
+    <hr>
+    <br>
+    <h2>Video</h2>
+    @forelse ($video->comments as $comment)
+        <p>Comment de la video: {{$comment->content}}</p>
+    @empty
+    <p>pas de commentaire pour cette video</p>
+
+    @endforelse
 
 
 @endsection
