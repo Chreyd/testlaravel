@@ -38,6 +38,9 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
+        dd($request->avatar->store('avatars'));
+        // dd($request->avatar->extension());
+        // dd($request->boolean('pain'),$request->boolean('galette'),$request->all());
 
         // dd($request->input('content'));
         // dd($request->content);
